@@ -54,6 +54,18 @@ namespace WindowsFormsApp24
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.поискПоФамилииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.поискПоНомеруДомаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.запросыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.запрос1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.запрос2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.запрос3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.запрос4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.запрос5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.запрос6ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.запрос7ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.запрос8ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.запрос9ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.запрос10ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.запрос11ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.студентыBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.группа_студентовDataSet)).BeginInit();
@@ -240,7 +252,8 @@ namespace WindowsFormsApp24
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.поискПоФамилииToolStripMenuItem,
-            this.поискПоНомеруДомаToolStripMenuItem});
+            this.поискПоНомеруДомаToolStripMenuItem,
+            this.запросыToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1191, 33);
@@ -262,6 +275,113 @@ namespace WindowsFormsApp24
             this.поискПоНомеруДомаToolStripMenuItem.Size = new System.Drawing.Size(224, 29);
             this.поискПоНомеруДомаToolStripMenuItem.Text = "Поиск по номеру дома";
             this.поискПоНомеруДомаToolStripMenuItem.Click += new System.EventHandler(this.поискПоНомеруДомаToolStripMenuItem_Click);
+            // 
+            // запросыToolStripMenuItem
+            // 
+            this.запросыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.запрос1ToolStripMenuItem,
+            this.запрос2ToolStripMenuItem,
+            this.запрос3ToolStripMenuItem,
+            this.запрос4ToolStripMenuItem,
+            this.запрос5ToolStripMenuItem,
+            this.запрос6ToolStripMenuItem,
+            this.запрос7ToolStripMenuItem,
+            this.запрос8ToolStripMenuItem,
+            this.запрос9ToolStripMenuItem,
+            this.запрос10ToolStripMenuItem,
+            this.запрос11ToolStripMenuItem});
+            this.запросыToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.запросыToolStripMenuItem.Name = "запросыToolStripMenuItem";
+            this.запросыToolStripMenuItem.Size = new System.Drawing.Size(102, 29);
+            this.запросыToolStripMenuItem.Text = "Запросы";
+            // 
+            // запрос1ToolStripMenuItem
+            // 
+            this.запрос1ToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.запрос1ToolStripMenuItem.Name = "запрос1ToolStripMenuItem";
+            this.запрос1ToolStripMenuItem.Size = new System.Drawing.Size(520, 30);
+            this.запрос1ToolStripMenuItem.Text = "1. Кто родился в 2001 году?";
+            this.запрос1ToolStripMenuItem.Click += new System.EventHandler(this.запрос1ToolStripMenuItem_Click);
+            // 
+            // запрос2ToolStripMenuItem
+            // 
+            this.запрос2ToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.запрос2ToolStripMenuItem.Name = "запрос2ToolStripMenuItem";
+            this.запрос2ToolStripMenuItem.Size = new System.Drawing.Size(520, 30);
+            this.запрос2ToolStripMenuItem.Text = "2. Кто живет на улице Пушкина?";
+            this.запрос2ToolStripMenuItem.Click += new System.EventHandler(this.запрос2ToolStripMenuItem_Click);
+            // 
+            // запрос3ToolStripMenuItem
+            // 
+            this.запрос3ToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.запрос3ToolStripMenuItem.Name = "запрос3ToolStripMenuItem";
+            this.запрос3ToolStripMenuItem.Size = new System.Drawing.Size(520, 30);
+            this.запрос3ToolStripMenuItem.Text = "3. У кого номер дома меньше 50?";
+            this.запрос3ToolStripMenuItem.Click += new System.EventHandler(this.запрос3ToolStripMenuItem_Click);
+            // 
+            // запрос4ToolStripMenuItem
+            // 
+            this.запрос4ToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.запрос4ToolStripMenuItem.Name = "запрос4ToolStripMenuItem";
+            this.запрос4ToolStripMenuItem.Size = new System.Drawing.Size(520, 30);
+            this.запрос4ToolStripMenuItem.Text = "4. У кого номер квартиры меньше 12?";
+            this.запрос4ToolStripMenuItem.Click += new System.EventHandler(this.запрос4ToolStripMenuItem_Click);
+            // 
+            // запрос5ToolStripMenuItem
+            // 
+            this.запрос5ToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.запрос5ToolStripMenuItem.Name = "запрос5ToolStripMenuItem";
+            this.запрос5ToolStripMenuItem.Size = new System.Drawing.Size(520, 30);
+            this.запрос5ToolStripMenuItem.Text = "5. У кого мужские имена?";
+            this.запрос5ToolStripMenuItem.Click += new System.EventHandler(this.запрос5ToolStripMenuItem_Click);
+            // 
+            // запрос6ToolStripMenuItem
+            // 
+            this.запрос6ToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.запрос6ToolStripMenuItem.Name = "запрос6ToolStripMenuItem";
+            this.запрос6ToolStripMenuItem.Size = new System.Drawing.Size(520, 30);
+            this.запрос6ToolStripMenuItem.Text = "6. У кого фамилия начинается на С?";
+            this.запрос6ToolStripMenuItem.Click += new System.EventHandler(this.запрос6ToolStripMenuItem_Click);
+            // 
+            // запрос7ToolStripMenuItem
+            // 
+            this.запрос7ToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.запрос7ToolStripMenuItem.Name = "запрос7ToolStripMenuItem";
+            this.запрос7ToolStripMenuItem.Size = new System.Drawing.Size(520, 30);
+            this.запрос7ToolStripMenuItem.Text = "7. У кого фамилия начинается на Е и имя на Н?";
+            this.запрос7ToolStripMenuItem.Click += new System.EventHandler(this.запрос7ToolStripMenuItem_Click);
+            // 
+            // запрос8ToolStripMenuItem
+            // 
+            this.запрос8ToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.запрос8ToolStripMenuItem.Name = "запрос8ToolStripMenuItem";
+            this.запрос8ToolStripMenuItem.Size = new System.Drawing.Size(520, 30);
+            this.запрос8ToolStripMenuItem.Text = "8. Кто не занимается тяжелой атлетикой?";
+            this.запрос8ToolStripMenuItem.Click += new System.EventHandler(this.запрос8ToolStripMenuItem_Click);
+            // 
+            // запрос9ToolStripMenuItem
+            // 
+            this.запрос9ToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.запрос9ToolStripMenuItem.Name = "запрос9ToolStripMenuItem";
+            this.запрос9ToolStripMenuItem.Size = new System.Drawing.Size(520, 30);
+            this.запрос9ToolStripMenuItem.Text = "9. Кто родился в 2004 году?";
+            this.запрос9ToolStripMenuItem.Click += new System.EventHandler(this.запрос9ToolStripMenuItem_Click);
+            // 
+            // запрос10ToolStripMenuItem
+            // 
+            this.запрос10ToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.запрос10ToolStripMenuItem.Name = "запрос10ToolStripMenuItem";
+            this.запрос10ToolStripMenuItem.Size = new System.Drawing.Size(520, 30);
+            this.запрос10ToolStripMenuItem.Text = "10. Кто родился сегодня?";
+            this.запрос10ToolStripMenuItem.Click += new System.EventHandler(this.запрос10ToolStripMenuItem_Click);
+            // 
+            // запрос11ToolStripMenuItem
+            // 
+            this.запрос11ToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.запрос11ToolStripMenuItem.Name = "запрос11ToolStripMenuItem";
+            this.запрос11ToolStripMenuItem.Size = new System.Drawing.Size(520, 30);
+            this.запрос11ToolStripMenuItem.Text = "11. У кого нет хобби?";
+            this.запрос11ToolStripMenuItem.Click += new System.EventHandler(this.запрос11ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -317,6 +437,18 @@ namespace WindowsFormsApp24
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem поискПоФамилииToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem поискПоНомеруДомаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem запросыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem запрос1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem запрос2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem запрос3ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem запрос4ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem запрос5ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem запрос6ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem запрос7ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem запрос8ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem запрос9ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem запрос10ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem запрос11ToolStripMenuItem;
     }
 }
 
