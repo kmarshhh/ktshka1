@@ -17,11 +17,36 @@ namespace WindowsFormsApp24
         
         public static string connectString = "Provider = Microsoft.Jet.OLEDB.4.0; Data Source = Группа студентов.mdb";
         private OleDbConnection myConnection;
+
+        // Состояние двойного подтверждения, встроенного в кнопку "Удалить"
+        private bool deleteArmed;
+        private int armedKod = -1;
+        private readonly Timer confirmTimer = new Timer();
+
         public Form1()
         {
             InitializeComponent();
             myConnection = new OleDbConnection(connectString);
             myConnection.Open();
+
+            confirmTimer.Interval = 5000;
+            confirmTimer.Tick += (s, e) => ResetDeleteConfirmation();
+            // Если код изменили, подтверждение больше не относится к этой записи
+            textBox1.TextChanged += (s, e) => ResetDeleteConfirmation();
+        }
+
+        /// <summary>
+        /// Сбрасывает «взведённое» состояние кнопки удаления.
+        /// </summary>
+        private void ResetDeleteConfirmation()
+        {
+            confirmTimer.Stop();
+            deleteArmed = false;
+            armedKod = -1;
+            button3.Text = "Удалить";
+            button3.BackColor = SystemColors.Control;
+            button3.ForeColor = SystemColors.ControlText;
+            button3.UseVisualStyleBackColor = true;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -33,6 +58,7 @@ namespace WindowsFormsApp24
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
+            confirmTimer.Stop();
             myConnection.Close();
         }
 
@@ -41,24 +67,34 @@ namespace WindowsFormsApp24
             int kod;
             if (!int.TryParse(textBox1.Text, out kod))
             {
+                ResetDeleteConfirmation();
                 MessageBox.Show("Введите корректный код записи для удаления.");
                 return;
             }
 
-            // Первое подтверждение
-            if (MessageBox.Show("Удалить запись с кодом " + kod + "?", "Подтверждение удаления",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+            // Первый клик — взводим кнопку, второй клик по ней же — удаляем
+            if (!deleteArmed || armedKod != kod)
+            {
+                deleteArmed = true;
+                armedKod = kod;
+                button3.Text = "Подтвердить?";
+                button3.BackColor = Color.FromArgb(220, 53, 69);
+                button3.ForeColor = Color.White;
+                button3.UseVisualStyleBackColor = false;
+                confirmTimer.Stop();
+                confirmTimer.Start();
                 return;
+            }
 
-            // Второе подтверждение (по умолчанию выбрана кнопка "Нет")
-            if (MessageBox.Show("Это действие необратимо. Вы точно хотите удалить запись?", "Повторное подтверждение",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) != DialogResult.Yes)
-                return;
+            // Второй клик — подтверждение получено
+            ResetDeleteConfirmation();
 
-            OleDbCommand command = new OleDbCommand("DELETE FROM Студенты WHERE Код = ?", myConnection);
-            command.Parameters.AddWithValue("@kod", kod);
-            int rows = command.ExecuteNonQuery();
-            MessageBox.Show(rows > 0 ? "Элемент удален!" : "Запись с таким кодом не найдена.");
+            using (OleDbCommand command = new OleDbCommand("DELETE FROM Студенты WHERE Код = ?", myConnection))
+            {
+                command.Parameters.AddWithValue("@kod", kod);
+                int rows = command.ExecuteNonQuery();
+                MessageBox.Show(rows > 0 ? "Элемент удален!" : "Запись с таким кодом не найдена.");
+            }
             this.студентыTableAdapter.Fill(this.группа_студентовDataSet.Студенты);
         }
 
